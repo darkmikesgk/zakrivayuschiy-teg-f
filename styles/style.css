@@ -15,6 +15,14 @@
 */
 
 .page {
+  color: var(--color-accent);
+  font-family: var(--font-inter);
+  font-size: 1.125rem; /* 18px */
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-variation-settings: 'wght' var(--font-weight-regular);
+  object-position: center;
+  object-fit: cover;
+  background-image: var(--bg-img);
+  background-color: var(--color-bg);
 }
