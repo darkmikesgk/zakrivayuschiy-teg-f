@@ -17,7 +17,9 @@
     <script src="./scripts/set-theme.js"></script>
   </head>
   <body class="page">
-    <header class="header">
+    <header class="header elastic">
+      <p class="header__logo">&lt;/html&gt;</p>
+      <h1 class="header__title">закрывающий тег</h1>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
         <ul class="theme-menu__list">
@@ -44,7 +46,51 @@
         </ul>
       </nav>
     </header>
-    <main></main>
+    <main class="content__section elastic">
+      <section class="content">
+        <h2 class="content__title">
+          Фритрек и нулевой спринт: Подготовка к работе
+        </h2>
+        <span class="watermark">&lt;/html&gt;</span>
+        <img
+          src="./images/image-1.png"
+          alt="Напишу потом"
+          class="card__image"
+          loading="lazy"
+        />
+        <article class="text__content-conteiner">
+          <p class="text__content">
+            Это было самое начало пути. На этом этапе важно было проникнуться
+            основами и настроиться на учёбу. И, возможно, подумать, как новые
+            знания могут повлиять на ваше будущее.
+          </p>
+          <p class="text__content">
+            Место для ваших воспоминаний о начале обучения.
+          </p>
+        </article>
+        <ul class="buttons">
+          <li>
+            <button class="card__icon-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 27 24"
+              >
+                <path
+                  fill="#000"
+                  d="M6 0H3v3h3V0ZM9 0H6v3h3V0ZM3 3H0v3h3V3ZM3 6H0v3h3V6ZM3 9H0v3h3V9ZM12 0H9v3h3V0ZM6 12H3v3h3v-3ZM9 15H6v3h3v-3ZM12 18H9v3h3v-3ZM21 0h3v3h-3V0ZM18 0h3v3h-3V0ZM24 3h3v3h-3V3ZM24 6h3v3h-3V6ZM24 9h3v3h-3V9ZM15 0h3v3h-3V0ZM21 12h3v3h-3v-3ZM18 15h3v3h-3v-3ZM15 18h3v3h-3v-3ZM15 3h-3v3h3V3ZM15 21h-3v3h3v-3Z"
+                />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button class="card__like-button">
+              <span class="button__text">like</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
