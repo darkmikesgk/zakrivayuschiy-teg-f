@@ -7,7 +7,7 @@
     <title>Закрывающий тег</title>
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="icon" href="./images/favicon.ico" sizes="any" />
-    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./svg/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./images/favicon.png" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
@@ -51,6 +51,7 @@
         <h2 class="content__title">
           Фритрек и нулевой спринт: Подготовка к работе
         </h2>
+        <div class="image-case">
         <span class="watermark">&lt;/html&gt;</span>
         <img
           src="./images/image-1.png"
@@ -58,6 +59,7 @@
           class="card__image"
           loading="lazy"
         />
+      </div>
         <article class="text__content-conteiner">
           <p class="text__content">
             Это было самое начало пути. На этом этапе важно было проникнуться
@@ -73,6 +75,7 @@
             <button class="card__icon-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                class="like-icon"
                 fill="none"
                 viewBox="0 0 27 24"
               >
@@ -84,13 +87,25 @@
             </button>
           </li>
           <li>
-            <button class="card__like-button">
+            <button class="card__like-button decor">
               <span class="button__text">like</span>
             </button>
           </li>
         </ul>
       </section>
     </main>
+    <footer class="footer">
+      <button class="save-button decor">
+        <span class="button__text">
+          <svg
+          viewBox="0 0 21 21"
+          class="floppy-icon">
+          <use href="svg/floppy.svg#floppy-bg">
+          </svg>
+          Сохранить на память
+        </span>
+      </button>
+    </footer>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
