@@ -36,7 +36,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-block: 102px 100px; /* 104px */
+  margin-block: 102px 100px;
   border: var(--borders);
   font-family: var(--font-ps2p);
   font-weight: var(--font-weight-regular);
@@ -44,7 +44,7 @@
   background: var(--color-bg);
   max-inline-size: 43.75rem;
   max-block-size: 23rem;
-  inline-size: clamp(23.4375rem, 50%, 43.5rem);
+  inline-size: clamp(23.4375rem, 50%, 43.75rem);
 }
 
 .elastic {
@@ -125,18 +125,21 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  row-gap: 3.375rem; /* 54px */
-  max-inline-size: 43.5rem;
+  row-gap: 50px;
+  margin-block-end: 54px;
+  max-inline-size: 43.75rem;
   inline-size: clamp(23.4375rem, 50%, 43.75rem);
 }
 
 .content {
-  outline: var(--borders);
+  display: flex;
+  flex-direction: column;
+  border: var(--borders);
   background: var(--color-bg);
 }
 
 .content__title {
-  margin: 7px 10px;
+  padding: 5px 10px;
   font-weight: var(--font-weight-bold);
   font-size: 18px;
   font-variation-settings: 'wght' var(--font-weight-bold);
@@ -147,14 +150,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-inline-size: 696px;
+  margin-block: 2px;
+  max-inline-size: 43.5rem;
 }
 
 .card__image {
-  display: block;
   object-fit: cover;
   object-position: center;
-  outline: var(--borders);
   inline-size: 100%;
 }
 
@@ -206,18 +208,33 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
   margin-inline-end: 25px;
   margin-block-end: 25px;
 }
 
 .card__icon-button {
-  border: none;
+  border: 2px solid rgba(0 0 0 / 0);
   padding: 0;
-  background: inherit;
+  background: transparent;
   cursor: pointer;
-  block-size: 24px;
-  inline-size: 27px;
+  block-size: 2.375rem;
+  inline-size: 2.4375rem;
+}
+
+.card__icon-button .main-body {
+  fill: transparent;
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button .core {
+  fill: transparent;
+  transition: fill 0.03s ease;
+}
+
+.card__icon-button .contour {
+  fill: var(--color-contour);
+  transition: fill 0.1s linear;
 }
 
 .card__icon-button:focus {
@@ -225,15 +242,38 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 5px;
-  transition: outline 0.3s ease;
+  border: 2px solid var(--color-accent);
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--color-contour);
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--color-contour);
+  transition: fill 0.3s 0.05s ease;
+}
+
+.card__icon-button:active .core {
+  fill: var(--color-main-body);
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--color-main-body);
+  transition: fill 0.3s 0.05s ease;
+}
+
+.card__icon-button:active .contour {
+  fill: var(--color-main-body);
+  transition: fill 0.3s 0.11s ease;
 }
 
 .card__like-button {
   position: relative;
   border: var(--borders);
-  overflow: hidden;
   background-color: var(--color-bg);
   transition: none;
   inline-size: 8.125rem;
@@ -241,7 +281,51 @@
 }
 
 .like-icon {
-  max-block-size: 21px;
+  max-block-size: 2.25rem;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--color-main-body);
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--color-main-body);
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--color-main-body);
+}
+
+.like-icon.is-liked:active .core {
+  fill: var(--color-main-body);
+  transition: fill 0.3s ease;
+}
+
+.like-icon.is-liked:active .main-body {
+  fill: var(--color-main-body);
+  transition: fill 0.3s 0.05s ease;
+}
+
+.like-icon.is-liked:active .contour {
+  fill: var(--color-main-body);
+  transition: fill 0.3s 0.05s ease;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.heart {
+  transform: scale(1);
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: big-heart 0.3s 0.1s ease-in alternate;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-on 0.3s 0.3s ease-in alternate;
 }
 
 .decor {
@@ -280,7 +364,7 @@
 .button__text {
   position: relative;
   z-index: 10;
-  color: var(--color-bg);
+  color: var(--color-text);
   font-family: var(--font-ps2p);
   font-size: 0.875rem;
   white-space: nowrap;
@@ -288,15 +372,15 @@
 }
 
 .footer {
-  margin-block: 54px 105px;
+  margin-block-end: 105px;
 }
 
 .save-button {
   position: relative;
   gap: 8px;
   width: 100%;
-  min-width: 335px;
-  min-height: 55px;
+  min-width: 20.9375rem;
+  min-height: 3.4375rem;
   border: var(--borders);
   background: var(--color-bg);
 }
@@ -304,8 +388,64 @@
 .floppy-icon {
   border: none;
   padding: 0;
-  fill: var(--color-bg);
+  fill: var(--color-text);
   inline-size: 21px;
+}
+
+.save-button.decor {
+  margin-block-start: -5px;
+}
+
+dialog {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: var(--borders);
+  padding: 30px;
+  color: var(--color-accent);
+  background-color: var(--color-bg);
+  inline-size: clamp(341px, 50%, 353px);
+  block-size: 11.9375rem;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--font-ps2p);
+  font-size: 14px;
+  line-height: 150%; /* 21px */
+  text-transform: uppercase;
+
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+dialog h3 {
+  display: inline-block;
+}
+
+dialog .floppy-icon {
+  fill: var(--color-accent);
+  inline-size: 5.9375rem;
+}
+
+dialog::backdrop {
+  background: rgba(0 0 0 / 0.75);
+}
+
+.close-button {
+  border: var(--borders);
+  padding: 9px 17px;
+  color: var(--color-accent);
+  font-family: var(--font-ps2p);
+  background-color: transparent;
+  inline-size: 100%;
+  max-block-size: 2.375rem;
 }
 
 @keyframes arrow {
@@ -317,4 +457,67 @@
   to {
     transform: translateX(4px);
   }
+}
+
+@keyframes big-heart {
+
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes sparks-on {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (375px <= width < 1440px) {
+
+  .header {
+    max-height: 20.4375rem;
+  }
+
+  .header__logo {
+    margin-block-start: 7.5rem;
+  }
+
+  .text__content-conteiner {
+    margin: 25px 28.95px 25px 25px;
+  }
+
+  .watermark {
+    top: 23px;
+    right: 11px;
+  }
+
+  .save-button {
+    min-width: 19.125rem;
+    min-height: 5rem;
+  }
+
+  .button__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .floppy-icon {
+    margin-block: 0.3125rem;
+    inline-size: 1.75rem;
+  }
+
+
+
+
 }
