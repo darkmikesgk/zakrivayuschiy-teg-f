@@ -1,6 +1,7 @@
 :root {
   --font-inter: 'Inter-Variable', sans-serif;
   --font-ps2p: 'PressStart2P-Regular', monospace;
+  --font-weight-title: 400;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --color-bg: #fff;
@@ -11,7 +12,7 @@
       rgba(0 0 0 / 0) 2px 4px
     ),
     repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgba(0 0 0 / 0) 2px 4px),
-    repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+    repeating-linear-gradient(to bottom, #e7e7e7 0 0.01%, #1a1a1a 100%);
   --borders: 2px solid var(--color-accent);
   --color-text: #fff;
   --color-contour: #000;

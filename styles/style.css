@@ -39,7 +39,7 @@
   margin-block: 102px 100px;
   border: var(--borders);
   font-family: var(--font-ps2p);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-title);
   text-transform: uppercase;
   background: var(--color-bg);
   max-inline-size: 43.75rem;
@@ -54,17 +54,17 @@
 .header__logo {
   margin-block-start: 8.5rem;
   margin-block-end: 20px;
+  font-weight: var(--font-weight-title);
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
 .header__title {
   margin-block-end: 25px;
+  font-weight: var(--font-weight-title);
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .theme-menu {
-  justify-self: center;
-  align-self: center;
   font-size: 14px;
 }
 
@@ -114,6 +114,10 @@
   outline: none;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:focus-visible {
+  outline: none;
 }
 
 .theme-menu__button:focus-visible::after {
@@ -277,6 +281,7 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--color-accent);
+  outline: none;
   transition: border 0.3s ease;
 }
 
@@ -301,7 +306,7 @@
 }
 
 .card__icon-button:active .contour {
-  fill: var(--color-main-body);
+  fill: var(--color-contour);
   transition: fill 0.3s 0.11s ease;
 }
 
@@ -341,7 +346,7 @@
 }
 
 .like-icon.is-liked:active .contour {
-  fill: var(--color-main-body);
+  fill: var(--color-contour);
   transition: fill 0.3s 0.05s ease;
 }
 
@@ -366,6 +371,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-weight: var(--font-weight-title);
   cursor: pointer;
 }
 
@@ -392,6 +398,7 @@
 
 .decor:focus-visible {
   box-shadow: 2px 2px 0 var(--color-accent);
+  outline: none;
   transition: box-shadow 0.3s ease;
 }
 
@@ -403,6 +410,10 @@
   font-size: 0.875rem;
   white-space: nowrap;
   mix-blend-mode: difference;
+}
+
+.button-title {
+  font-weight: var(--font-weight-title);
 }
 
 .footer {
@@ -422,7 +433,7 @@
 .floppy-icon {
   border: none;
   padding: 0;
-  fill: var(--color-text);
+  fill: currentColor;
   inline-size: 21px;
 }
 
@@ -463,7 +474,6 @@ dialog h3 {
 }
 
 dialog .floppy-icon {
-  fill: var(--color-accent);
   inline-size: 5.9375rem;
 }
 
@@ -472,11 +482,13 @@ dialog::backdrop {
 }
 
 .close-button {
+  position: relative;
   border: var(--borders);
   padding: 9px 17px;
-  color: var(--color-accent);
   font-family: var(--font-ps2p);
-  background-color: transparent;
+  font-weight: var(--font-weight-regular);
+  text-transform: uppercase;
+  background: var(--color-bg);
   cursor: pointer;
   inline-size: 100%;
   max-block-size: 2.375rem;
@@ -516,7 +528,7 @@ dialog::backdrop {
 }
 
 @media (375px <= width < 1440px) {
-  
+
   .header {
     max-height: 20.4375rem;
   }
