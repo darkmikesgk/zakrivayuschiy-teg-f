@@ -33,15 +33,15 @@
     repeating-linear-gradient(180deg, #000 0 2px, rgba(0 0 0 / 0) 2px 4px),
     repeating-linear-gradient(to bottom, #007f0c 0%, #004306 100%);
   --borders: 2px solid var(--color-accent);
-  --color-text: #00CC14;
-  --color-contour: #00CC14;
+  --color-text: #00cc14;
+  --color-contour: #00cc14;
   --color-sparks: #f00;
   --color-core: #fff;
   --color-main-body: #f00;
 }
 
 @media (prefers-color-scheme: dark) {
-
+  
   :root {
     --color-bg: #000;
     --color-accent: #00cc14;
@@ -55,8 +55,8 @@
       repeating-linear-gradient(180deg, #000 0 2px, rgba(0 0 0 / 0) 2px 4px),
       repeating-linear-gradient(to bottom, #007f0c 0%, #004306 100%);
     --borders: 2px solid var(--color-accent);
-    --color-text: #00CC14;
-    --color-contour: #00CC14;
+    --color-text: #00cc14;
+    --color-contour: #00cc14;
     --color-sparks: #f00;
     --color-core: #fff;
     --color-main-body: #f00;

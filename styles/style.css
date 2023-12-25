@@ -152,12 +152,14 @@
   align-items: center;
   margin-block: 2px;
   max-inline-size: 43.5rem;
+  max-block-size: 43.5rem;
 }
 
 .card__image {
   object-fit: cover;
   object-position: center;
   inline-size: 100%;
+  block-size: 100%;
 }
 
 .watermark {
@@ -165,7 +167,7 @@
   position: absolute;
   top: 25px;
   right: 25px;
-  display: block;
+  z-index: 12;
   opacity: 0.5;
   color: inherit;
   font-family: var(--font-ps2p);
@@ -175,6 +177,38 @@
   text-shadow: 1px 0 1px var(--color-bg), 0 1px 1px var(--color-bg),
     -1px 0 1px var(--color-bg), 0 -1px 1px var(--color-bg);
   mix-blend-mode: hard-light;
+}
+
+.image-1 {
+  filter: brightness(0.5);
+}
+
+.image-2 {
+  filter: contrast(1.2);
+}
+
+.image-3 {
+  filter: grayscale(1);
+}
+
+.image-4 {
+  filter: sepia(1);
+}
+
+.image-5 {
+  filter: blur(1px);
+}
+
+.image-6 {
+  filter: invert(1);
+}
+
+.image-7 {
+  filter: saturate(25%);
+}
+
+.image-8 {
+  filter: invert(1) sepia(1) grayscale(1);
 }
 
 @supports (
@@ -418,7 +452,6 @@ dialog {
   font-size: 14px;
   line-height: 150%; /* 21px */
   text-transform: uppercase;
-
 }
 
 dialog:not([open]) {
@@ -444,6 +477,7 @@ dialog::backdrop {
   color: var(--color-accent);
   font-family: var(--font-ps2p);
   background-color: transparent;
+  cursor: pointer;
   inline-size: 100%;
   max-block-size: 2.375rem;
 }
@@ -482,7 +516,7 @@ dialog::backdrop {
 }
 
 @media (375px <= width < 1440px) {
-
+  
   .header {
     max-height: 20.4375rem;
   }
@@ -516,8 +550,4 @@ dialog::backdrop {
     margin-block: 0.3125rem;
     inline-size: 1.75rem;
   }
-
-
-
-
 }
