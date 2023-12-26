@@ -1,6 +1,4 @@
 :root.theme-light {
-  --font-inter: 'Inter-Variable', sans-serif;
-  --font-ps2p: 'PressStart2P-Regular', monospace;
   --font-weight-title: 400;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
@@ -43,7 +41,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-
+  
   :root {
     --color-bg: #000;
     --color-accent: #00cc14;

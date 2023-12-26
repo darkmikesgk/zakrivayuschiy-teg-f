@@ -38,6 +38,11 @@ input {
   font-size: inherit;
 }
 
+figure {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
 ul,
 ol {
   list-style: none;
