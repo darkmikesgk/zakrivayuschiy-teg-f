@@ -259,8 +259,8 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 27px;
-  margin-inline: 27px;
-  margin-block: 25px;
+  padding-inline: 27px;
+  padding-block: 25px;
 }
 
 .text__content {
@@ -270,9 +270,8 @@
 .buttons {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
   gap: 4px;
+  align-self: flex-end;
   margin-inline-end: 27px;
   margin-block-end: 28px;
 }
@@ -545,7 +544,7 @@
   }
 
   .text__content-conteiner {
-    margin: 27px 28.95px 24px 27px;
+    padding: 27px 28.95px 24px 27px;
   }
 
   .card__image {
